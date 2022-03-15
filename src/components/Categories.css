@@ -1,0 +1,46 @@
+.Categories{
+    
+    display: flex;
+    margin: 5em;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+.categories{
+    padding: 1em;
+    margin: 1em;
+    height:20em;
+    width: 20em;
+}
+
+.breakfast{
+    background-image: url(https://www.budgetbytes.com/wp-content/uploads/2021/07/EBB-Sandwich-Rounds-V1.jpg);
+    background-size:cover;
+    background-position:center;
+}
+
+.meal{
+    background-image: url(https://www.budgetbytes.com/wp-content/uploads/2021/12/Spiced-Lentils-V1.jpg);
+    background-size:cover;
+    background-position:center;
+}
+
+.snack{
+    background-image: url(https://lh6.googleusercontent.com/_OaYG005JPDs/TZPBI_pHW5I/AAAAAAAAC_k/CQczJ19BF84/s640/Lemon%20Spice%20Cake%20slices.jpg);
+    background-size:cover;
+    background-position:center;
+}
+
+.categories p{
+ text-decoration: none;
+ background-color: rgba(245, 245, 245, 0.685);
+ padding: .1em;
+ border-radius: 10px;
+
+ 
+}
+

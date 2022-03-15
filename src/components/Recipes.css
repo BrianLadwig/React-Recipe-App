@@ -1,0 +1,45 @@
+.Recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3em;
+}
+
+#recipeList {
+    background-color: whitesmoke;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    height: 10em;
+    width: 100%;
+    -webkit-box-shadow: 1px 1px 18px 4px rgba(0, 0, 0, 0.48);
+    box-shadow: 1px 1px 18px 4px rgba(0, 0, 0, 0.48);
+}
+
+#recipeList a {
+    text-decoration: none;
+
+
+}
+
+#textbox {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+#textbox h2 {
+    color: rgb(98, 97, 97);
+    font-size: 3em;
+}
+
+#textbox p{
+    color: rgb(78, 78, 78);
+    font-size: 1.2em;
+}
+
+#favHeart{
+    color: tomato;
+}

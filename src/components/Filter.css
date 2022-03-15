@@ -1,0 +1,23 @@
+.Filter{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.Filter p:first-of-type{
+    font-size: 1.4em;
+    margin-right: 1em;
+}
+
+.Filter p{
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+input{
+    margin-left: 1em;
+}
+
