@@ -5,7 +5,7 @@ const defaultValue = null;
 
 export const FilterContext = React.createContext(defaultValue);
 
-export const FilterContextProvider = (props) => {
+export const FilterContextProvider = props => {
 
   const [cat, setCat] = useState({
     breakfast: false,

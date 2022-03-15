@@ -6,6 +6,7 @@ import Filter from "./Filter";
 import "./Recipes.css";
 import styled from "styled-components";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
+import { UserContext } from "../contexts/UserContext.js";
 
 const Pic = styled.div`
   width: 14em;
@@ -17,6 +18,7 @@ const Pic = styled.div`
 
 export default function Recipes() {
   const { cat, searchTerm } = useContext(FilterContext);
+  const {favorites,setFavorites} = useContext(UserContext)
 
   console.log("cat:", cat);
 
@@ -38,6 +40,12 @@ export default function Recipes() {
       }
   }
 
+  function favoritesHandler(recipe){
+      setFavorites([...favorites,recipe])
+  }
+console.log('fav:',favorites);
+
+
   return (
     <div className="Recipes">
       <Filter />
@@ -49,9 +57,10 @@ export default function Recipes() {
             <div id="textbox">
               <h2>{recipe.name}</h2>
               <p>{recipe.info}</p>
-              <AiOutlineHeart id="favHeart" />
+              
             </div>
           </NavLink>
+          <AiOutlineHeart id="favHeart" onClick={()=>favoritesHandler(recipe)} recipe={recipe} />
         </div>
       ))}
     </div>
