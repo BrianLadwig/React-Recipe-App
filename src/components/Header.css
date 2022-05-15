@@ -1,0 +1,119 @@
+
+.Header{
+    /* padding-right: 2em; */
+    display: flex;
+    border-bottom: 1px solid rgb(250, 104, 177);
+    justify-content: space-between;
+    align-items:center; 
+    /* width: 1em; */
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#Logo{
+    display: flex;
+    align-items: center;
+}
+
+
+#search{
+    /* border: 2px solid black; */
+    /* border-radius: 20px; */
+    /* padding: .3em; */
+    display: flex;
+    align-items: center;
+    /* position: relative;
+    left: 10px; */
+    position: absolute;
+    right: 100px;
+   
+}
+
+
+#search input{
+    border: none;
+    outline: none;
+    font-size: 1.5em;
+    width: 1em;
+    /* background-color: brown; */
+    display: none;
+}
+
+
+#search button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#lookingGlass{
+    font-size: 1.5em;
+    color: hotpink;
+}
+
+#Burger{
+    position: absolute;
+    right: 40px;
+    top: 45px;
+    width: 40px;
+    height: 50px;
+}
+
+.line{
+    background-color: hotpink;
+    height: 2px;
+    width: 30px;
+   position: relative;
+   
+}
+
+#line1{
+    top: 12px;
+}
+
+#line2{
+    top: 18px;
+}
+
+
+.Nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* position: relative;
+    top: 50px; */
+    height: 100vh;
+    width: 30%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.829);
+    padding: 10em;
+}
+
+#notOpen{
+    display: none;
+}
+
+.Nav a{
+    margin: 1em;
+    text-decoration: none;
+    color: hotpink;
+    cursor: pointer;
+}
+
+
+
+
+@media only screen and (min-width: 600px) {
+    #search{
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: .3em 2em;
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: 10px;
+    }
+  }

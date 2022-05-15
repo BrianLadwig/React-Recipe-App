@@ -14,6 +14,7 @@ const Pic = styled.div`
   background-image: url(${(props) => props.pic});
   background-position: center;
   background-size: 14em;
+  grid-area: 1/1/3/2;
 `;
 
 export default function Recipes() {
@@ -52,12 +53,11 @@ console.log('fav:',favorites);
       {arrayOfRecipes.filter(catFilter).filter(searchFilter).map((recipe) => (
         <div id="recipeList" key={recipe.id}>
           <Pic pic={recipe.pic} />
-          <NavLink to={recipe.id + ""}>
+          <NavLink className="recipeLink" to={recipe.id + ""}>
             {" "}
-            <div id="textbox">
+            <div id="textBox">
               <h2>{recipe.name}</h2>
               <p>{recipe.info}</p>
-              
             </div>
           </NavLink>
           <AiOutlineHeart id="favHeart" onClick={()=>favoritesHandler(recipe)} recipe={recipe} />

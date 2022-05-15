@@ -4,68 +4,9 @@
     box-sizing: border-box;
 }
 
-
-
-.Header{
-    padding-right: 2em;
-    display: flex;
-    border-bottom: 1px solid rgb(250, 104, 177);
-    justify-content: space-between;
-    align-items:center; 
-    
-}
-
-#Logo{
-    display: flex;
-    align-items: center;
-}
-
-#search{
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: .3em 2em;
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: 10px;
-}
-
-#search input{
-    border: none;
-    outline: none;
-    font-size: 1.5em;
-}
-
-
-
-#search button{
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-}
-#lookingGlass{
-    font-size: 1.5em;
-}
-
-
-.Nav{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: relative;
-    top: 50px;
-    
-}
-
-.Nav a{
-    margin: 1em;
-    text-decoration: none;
-    color: hotpink;
-    cursor: pointer;
-}
-
-
-
 .Main{
-    padding: 2em 4em;
-    background-color:rgb(255, 231, 243);
+    padding: 2em 2em;
+    background: rgb(235, 235, 235); 
 }
 
 .Footer{

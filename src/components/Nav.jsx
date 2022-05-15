@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FilterContext } from "../contexts/FilterContext";
 import { UserContext } from "../contexts/UserContext.js";
 
-export default function Nav() {
+export default function Nav({ open, setOpen }) {
   const { cat, setCat } = useContext(FilterContext);
   const { user,setUser } = useContext(UserContext);
 
@@ -11,8 +11,8 @@ export default function Nav() {
     setCat({ breakfast: false, meal: false, snack: false });
   }
   return (
-    <div className="Nav">
-      <nav>
+    <nav className="Nav" id={open? 'open':'notOpen' }>
+      
         <NavLink to="/">home</NavLink>
         <NavLink onClick={clickHandler} to="/recipes">
           {" "}
@@ -32,7 +32,7 @@ export default function Nav() {
         ) : (
           <NavLink to="/login">login</NavLink>
         )}
-      </nav>
-    </div>
+      
+    </nav>
   );
 }

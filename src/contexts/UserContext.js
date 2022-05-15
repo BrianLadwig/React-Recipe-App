@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-const currentUser = localStorage.getItem("currentUser")
+const storageUser = localStorage.getItem("currentUser")
+const currentUser = storageUser ? JSON.parse(storageUser) : null
 
 const userTemplate = [];
 
@@ -9,7 +10,7 @@ export const UserContext = React.createContext(userTemplate);
 
 export const UserContextProvider = props => {
 
-  const [users, setUsers] = useState([{name:'admin', email:'admin', password:'123', favorites:[]}])
+  const [users, setUsers] = useState([{name:'admin', email:'admin', password:'123', favorites:[],userRecipes:[]}])
 
   const [user, setUser] = useState(currentUser);
 

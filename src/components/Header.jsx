@@ -1,17 +1,21 @@
 import Nav from "./Nav";
 import { BsSearch } from "react-icons/bs";
 import { FilterContext } from "../contexts/FilterContext.js";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import './Header.css'
+import HamburgerMenu from "./HamburgerMenu.jsx";
 
 export default function Header() {
-    const { searchTerm,setSearchTerm } = useContext(FilterContext);
+  const { setSearchTerm } = useContext(FilterContext);
+  const [open, setOpen] = useState(false)
 
-    function searchHandler(e){
-        setSearchTerm((e.target.value).toLowerCase())
-        console.log(searchTerm);
-    }
+  console.log(open);
+
+
+  function searchHandler(e) {
+    setSearchTerm(e.target.value.toLowerCase());
+  }
   return (
     <div className="Header">
       <div id="Logo">
@@ -22,12 +26,15 @@ export default function Header() {
         <h1 className="chefB">Chef Brain</h1>
       </div>
       <div id="search">
-        <input type="text" onChange={searchHandler}/>
-       
-        <NavLink to="/recipes"><BsSearch id="lookingGlass" /></NavLink>
-       
+        <input type="text" onChange={searchHandler} />
+
+        <NavLink to="/recipes">
+          <BsSearch id="lookingGlass" />
+        </NavLink>
       </div>
-      <Nav />
+      <div onClick={() => {setOpen(!open)}} ><HamburgerMenu />
+      <Nav open={open} setOpen={setOpen} /></div>
+      
     </div>
   );
 }
