@@ -10,7 +10,7 @@ export default function Header() {
   const { setSearchTerm } = useContext(FilterContext);
   const [open, setOpen] = useState(false)
 
-  console.log(open);
+
 
 
   function searchHandler(e) {
