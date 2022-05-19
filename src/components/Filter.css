@@ -5,6 +5,7 @@
     padding: 1em;
     display: flex;
     align-items: center;
+    width: 95%;
 }
 
 .Filter p:first-of-type{

@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FilterContext } from "../contexts/FilterContext";
 import { UserContext } from "../contexts/UserContext.js";
+import Login from './Login.jsx'
 
 export default function Nav({ open, setOpen }) {
   const { cat, setCat } = useContext(FilterContext);
   const { user,setUser } = useContext(UserContext);
+  const [openLogin, setOpenLogin] = useState(false)
 
   function clickHandler(str) {
     setCat({ breakfast: false, meal: false, snack: false });
@@ -18,7 +20,7 @@ export default function Nav({ open, setOpen }) {
           {" "}
           recipes
         </NavLink>
-        <NavLink to="/about">about</NavLink>
+        <NavLink openLogin={openLogin} to="/about">about</NavLink>
         <NavLink to="/favorites">favorites</NavLink>
 
         {user ? (
@@ -30,9 +32,10 @@ export default function Nav({ open, setOpen }) {
             logout
           </a>
         ) : (
-          <NavLink to="/login">login</NavLink>
+          <a onClick={() => {setOpenLogin(!openLogin)}}>login</a>
+          
         )}
-      
+      {openLogin? <Login/>:"" } 
     </nav>
   );
 }

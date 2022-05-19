@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext.js";
+import "./Login.css"
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   const { users, user, setUser, email, password, setEmail,setPassword } = useContext(UserContext);
 
-  console.log(user);
+  // console.log(user);
 
   function handleLogin(e) {
     e.preventDefault();
@@ -19,8 +21,8 @@ export default function Login() {
     })
   }
   return (
-    <div className="loginForm" onSubmit={handleLogin}>
-      <form action="">
+    <div className="Login" onSubmit={handleLogin}>
+      
         <input
           type="email"
           name="email"
@@ -37,8 +39,11 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <button onClick={handleLogin}>Submit</button>
-      </form>
+        <button onClick={handleLogin}>Log in</button>
+      
+      <p>or</p>
+      <NavLink to="/register">register</NavLink>
+
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.Register{
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.Register input{
+    width: 20em;
+    height: 2em;
+    margin: 1em;
+}

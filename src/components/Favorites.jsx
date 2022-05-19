@@ -1,7 +1,7 @@
 import { UserContext } from "../contexts/UserContext.js";
 import { useContext } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useResolvedPath } from "react-router-dom";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import "./Recipes.css";
 
@@ -15,7 +15,7 @@ const Pic = styled.div`
 `;
 
 export default function Favorites() {
-  const { user, favorites, setFavorites } = useContext(UserContext);
+  const { user, users, favorites, setFavorites } = useContext(UserContext);
 
   function favoritesHandler(recipe) {
     const isFavorite = favorites.find((item) => item.id === recipe.id);
@@ -23,12 +23,18 @@ export default function Favorites() {
     // console.log("isFavorite:", isFavorite);
     if (!isFavorite) {
       setFavorites([...favorites, recipe]);
+
+      users.forEach((item) => {
+        if (item.firstName === user.firstName) {
+          item.favorites.push(recipe);
+          console.log("ok");
+        }
+      });
     } else {
       const updatedFavorites = favorites.filter(
         (item) => recipe.id !== item.id
       );
-
-      //  console.log("updatetFav",updatedFavorites);
+      console.log("test");
       setFavorites(updatedFavorites);
     }
   }

@@ -19,9 +19,7 @@ const Pic = styled.div`
 
 export default function Recipes() {
   const { cat, searchTerm } = useContext(FilterContext);
-  const { favorites, setFavorites } = useContext(UserContext);
-
-  // console.log("cat:", cat);
+  const { favorites, setFavorites, users, user } = useContext(UserContext);
 
   const catFilter = (item) => {
     if (!cat.meal && !cat.breakfast && !cat.snack) {
@@ -36,16 +34,26 @@ export default function Recipes() {
   const searchFilter = (item) => {
     if (searchTerm === "") {
       return true;
-    } else if (item.name.toLowerCase().includes(searchTerm)) {
+    } 
+    if (item.name.toLowerCase().includes(searchTerm)) {
       return true;
     }
   };
 
   function favoritesHandler(recipe) {
+    if (!user) {
+      return alert("please log in");
+    }
+
     const isFavorite = favorites.find((item) => item.id === recipe.id);
 
-    // console.log("isFavorite:", isFavorite);
     if (!isFavorite) {
+      users.forEach((item) => {
+        if (item.firstName === user.firstName) {
+          item.favorites.push(recipe);
+        }
+      });
+
       setFavorites([...favorites, recipe]);
     } else {
       const updatedFavorites = favorites.filter(

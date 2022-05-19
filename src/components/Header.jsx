@@ -3,15 +3,12 @@ import { BsSearch } from "react-icons/bs";
 import { FilterContext } from "../contexts/FilterContext.js";
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-import './Header.css'
+import "./Header.css";
 import HamburgerMenu from "./HamburgerMenu.jsx";
 
 export default function Header() {
   const { setSearchTerm } = useContext(FilterContext);
-  const [open, setOpen] = useState(false)
-
-
-
+  const [open, setOpen] = useState(false);
 
   function searchHandler(e) {
     setSearchTerm(e.target.value.toLowerCase());
@@ -27,14 +24,19 @@ export default function Header() {
       </div>
       <div id="search">
         <input type="text" onChange={searchHandler} />
-
-        <NavLink to="/recipes">
-          <BsSearch id="lookingGlass" />
-        </NavLink>
+        <BsSearch id="lookingGlass" />
+        <NavLink to="/recipes"></NavLink>
       </div>
-      <div onClick={() => {setOpen(!open)}} ><HamburgerMenu />
-      <Nav open={open} setOpen={setOpen} /></div>
-      
+      <div
+        
+      >
+        <div id="burgerTrigger"
+        onClick={(e) => {
+          setOpen(!open);
+        }}><HamburgerMenu open={open} /></div>      
+        
+        <Nav open={open} setOpen={setOpen} />
+      </div>
     </div>
   );
 }

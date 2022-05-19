@@ -1,0 +1,21 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 11em;
+}
+
+button{
+    background-color: hotpink;
+    border: none;
+    padding: .4em;
+    margin: .3em;
+}
+
+.Login p{
+    color: white;
+}

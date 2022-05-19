@@ -1,18 +1,11 @@
-import './Header.css'
+import "./Header.css";
 
-export default function HamburgerMenu (){
-
-
-
-return(
-    <div className="HamburgerMenu">
-        <div id='Burger'>
-        <div className="line" id="line1"></div>
-        <div className="line" id="line2"></div>
-        <div className="line" id="line3"></div>
-        </div>
+export default function HamburgerMenu({ open }) {
+  return (
+    <div className="HamburgerMenu" className={open? "HamburgerMenu open":"HamburgerMenu"}>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-)
-
-
+  );
 }

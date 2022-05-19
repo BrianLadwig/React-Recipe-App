@@ -4,6 +4,7 @@ import Login from "./Login.jsx";
 import Home from "./Home";
 import Recipes from "./Recipes";
 import Recipe from "./Recipe";
+import Register from "./Register";
 import Favorites from "./Favorites";
 
 
@@ -20,7 +21,7 @@ export default function Main() {
           </Route>
         <Route path="favorites" element={<Favorites/>}/>
         <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="*" element={<p>Error 404: Page not found.</p>} />
       </Routes>
     </div>
