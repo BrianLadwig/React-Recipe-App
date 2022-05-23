@@ -15,29 +15,29 @@ const Pic = styled.div`
 `;
 
 export default function Favorites() {
-  const { user, users, favorites, setFavorites } = useContext(UserContext);
+  const { user, users, favorites, setFavorites, toggleFavorites } = useContext(UserContext);
 
-  function favoritesHandler(recipe) {
-    const isFavorite = favorites.find((item) => item.id === recipe.id);
+  // function favoritesHandler(recipe) {
+  //   const isFavorite = favorites.find((item) => item.id === recipe.id);
 
-    // console.log("isFavorite:", isFavorite);
-    if (!isFavorite) {
-      setFavorites([...favorites, recipe]);
+  //   // console.log("isFavorite:", isFavorite);
+  //   if (!isFavorite) {
+  //     setFavorites([...favorites, recipe]);
 
-      users.forEach((item) => {
-        if (item.firstName === user.firstName) {
-          item.favorites.push(recipe);
-          console.log("ok");
-        }
-      });
-    } else {
-      const updatedFavorites = favorites.filter(
-        (item) => recipe.id !== item.id
-      );
-      console.log("test");
-      setFavorites(updatedFavorites);
-    }
-  }
+  //     users.forEach((item) => {
+  //       if (item.firstName === user.firstName) {
+  //         item.favorites.push(recipe);
+  //         console.log("ok");
+  //       }
+  //     });
+  //   } else {
+  //     const updatedFavorites = favorites.filter(
+  //       (item) => recipe.id !== item.id
+  //     );
+  //     console.log("test");
+  //     setFavorites(updatedFavorites);
+  //   }
+  // }
 
   return (
     <div className="Recipes">
@@ -57,13 +57,13 @@ export default function Favorites() {
             {!favorites.find((item) => item.id === recipe.id) ? (
               <AiOutlineHeart
                 id="favHeart"
-                onClick={() => favoritesHandler(recipe)}
+                onClick={() => toggleFavorites(recipe)}
                 //recipe={recipe}
               />
             ) : (
               <AiTwotoneHeart
                 id="favHeart"
-                onClick={() => favoritesHandler(recipe)}
+                onClick={() => toggleFavorites(recipe)}
                 //recipe={recipe}
               />
             )}

@@ -19,7 +19,8 @@ const Pic = styled.div`
 
 export default function Recipes() {
   const { cat, searchTerm } = useContext(FilterContext);
-  const { favorites, setFavorites, users, user } = useContext(UserContext);
+  const { favorites, setFavorites, users, user, toggleFavorites } =
+    useContext(UserContext);
 
   const catFilter = (item) => {
     if (!cat.meal && !cat.breakfast && !cat.snack) {
@@ -34,37 +35,11 @@ export default function Recipes() {
   const searchFilter = (item) => {
     if (searchTerm === "") {
       return true;
-    } 
+    }
     if (item.name.toLowerCase().includes(searchTerm)) {
       return true;
     }
   };
-
-  function favoritesHandler(recipe) {
-    if (!user) {
-      return alert("please log in");
-    }
-
-    const isFavorite = favorites.find((item) => item.id === recipe.id);
-
-    if (!isFavorite) {
-      users.forEach((item) => {
-        if (item.firstName === user.firstName) {
-          item.favorites.push(recipe);
-        }
-      });
-
-      setFavorites([...favorites, recipe]);
-    } else {
-      const updatedFavorites = favorites.filter(
-        (item) => recipe.id !== item.id
-      );
-
-      //  console.log("updatetFav",updatedFavorites);
-      setFavorites(updatedFavorites);
-    }
-  }
-  // console.log("fav:", favorites);
 
   return (
     <div className="Recipes">
@@ -85,14 +60,12 @@ export default function Recipes() {
             {!favorites.find((item) => item.id === recipe.id) ? (
               <AiOutlineHeart
                 id="favHeart"
-                onClick={() => favoritesHandler(recipe)}
-                //recipe={recipe}
+                onClick={() => toggleFavorites(recipe)}
               />
             ) : (
               <AiTwotoneHeart
                 id="favHeart"
-                onClick={() => favoritesHandler(recipe)}
-                //recipe={recipe}
+                onClick={() => toggleFavorites(recipe)}
               />
             )}
           </div>
