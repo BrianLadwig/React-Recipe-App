@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FilterContext } from "../contexts/FilterContext";
 import { useContext } from "react";
 import "./Categories.css";
-import styled from "styled-components";
+
 
 
 
@@ -11,7 +11,6 @@ export default function Categories() {
   const { cat } = useContext(FilterContext);
 
   function clickHandler(str) {
-    //    setCat(str)
     cat[str] = !cat[str];
   }
   

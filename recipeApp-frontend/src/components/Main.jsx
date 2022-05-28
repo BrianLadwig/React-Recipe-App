@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import About from "./About";
-import Login from "./Login.jsx";
-import Home from "./Home";
-import Recipes from "./Recipes";
-import Recipe from "./Recipe";
-import Register from "./Register";
-import Favorites from "./Favorites";
+import About from "./About.jsx";
+import Home from "./Home.jsx";
+import Recipes from "./Recipes.jsx";
+import Recipe from "./Recipe.jsx";
+import Register from "./Register.jsx";
+import Favorites from "./Favorites.jsx";
 
 
 export default function Main() {

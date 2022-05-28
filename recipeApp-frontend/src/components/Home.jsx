@@ -1,5 +1,5 @@
 import "./Home.css";
-import Categories from "./Categories";
+import Categories from "./Categories.jsx";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";

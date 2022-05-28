@@ -14,7 +14,6 @@ const Pic = styled.div`
   background-image: url(${(props) => props.pic});
   background-position: center;
   background-size: 14em;
-  grid-area: 1/1/3/2;
 `;
 
 export default function Recipes() {
@@ -49,8 +48,9 @@ export default function Recipes() {
         .filter(searchFilter)
         .map((recipe) => (
           <div id="recipeList" key={recipe.id}>
-            <Pic pic={recipe.pic} />
+          <NavLink id="recipe-PicLink" to={recipe.id + ""}> <Pic pic={recipe.pic} /></NavLink>
             <NavLink className="recipeLink" to={recipe.id + ""}>
+            
               {" "}
               <div id="textBox">
                 <h2>{recipe.name}</h2>
