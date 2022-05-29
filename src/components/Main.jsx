@@ -13,7 +13,7 @@ export default function Main() {
   return (
     <div className="Main">
       <Routes>
-        <Route index element={<Home />} />
+        <Route path='RecipeApp' index element={<Home />} />
           <Route path="recipes">
             <Route index element={<Recipes />} />
             <Route path=":recipeId" element={<Recipe />} />
