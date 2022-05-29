@@ -1,6 +1,6 @@
 # RecipeApp
-A a Recipe organiser Application, created with React. The user should be able to create a user,
-create Recipes and toggle favorites.  
+A  recipes organiser application, created with React. The user should be able to create a user,
+create recipes and toggle favorites.  
 !work in progress!
 
 ### To-Do's
